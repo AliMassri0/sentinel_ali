@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sentinel/dashboard.dart';
+import 'package:sentinel/plist.dart';
 import 'package:sentinel/priority.dart';
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -12,9 +13,7 @@ class NavBar extends StatefulWidget {
 List <Widget> _pages=[
   const DashBoard(),
   const Priority(),
-  Scaffold(
-    backgroundColor: Colors.green,
-  ),
+  const Plist(),
   Scaffold(
     backgroundColor: Colors.blue,
   ),

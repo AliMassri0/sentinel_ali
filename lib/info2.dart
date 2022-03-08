@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sentinel/navigationBar.dart';
 import 'package:sentinel/patients.dart';
-class Info extends StatelessWidget {
+class Info2 extends StatelessWidget {
   Patients pat;
-   Info({required this.pat});
+   Info2({required this.pat});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class Info extends StatelessWidget {
             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> const NavBar()));
           }, icon: const Icon(Icons.close))
         ],
-        backgroundColor: const Color.fromRGBO(237, 11, 25, 1),
+        backgroundColor: Colors.lightBlue,
         title: Text(pat.name, style: const TextStyle(fontWeight: FontWeight.bold),),
       ),
       body:  
