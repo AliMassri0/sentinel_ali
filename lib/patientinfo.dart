@@ -1,3 +1,4 @@
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:sentinel/navigationBar.dart';
 import 'package:sentinel/patients.dart';
@@ -85,7 +86,7 @@ class Info extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
-                height: mediaQueryHeight*0.3,
+                height: mediaQueryHeight*0.25,
                 width: mediaQueryWidth*0.4,
                 child: Column(
                 children:[ 
@@ -100,7 +101,7 @@ class Info extends StatelessWidget {
                   ),
                   
                  Text(pat.oxygen, style: const TextStyle(
-                    color: Colors.red, fontSize: 40, fontWeight: FontWeight.w900
+                 color: Colors.red, fontSize: 40, fontWeight: FontWeight.w900
                   ),),
                   
                   const Padding(
@@ -112,8 +113,14 @@ class Info extends StatelessWidget {
                 ]
                 ),
               ),
+               DottedLine(
+                     lineLength: mediaQueryHeight*0.25,
+                     direction: Axis.vertical,
+                     dashColor: Colors.grey,
+                     dashRadius: 30,
+                   ),
               SizedBox(
-                height: mediaQueryHeight*0.3,
+                height: mediaQueryHeight*0.25,
                 width: mediaQueryWidth*0.4,
                 child: Column(
                   children: [
@@ -133,7 +140,7 @@ class Info extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
                       child: Text('2 hour ago', style: TextStyle(
-                          color: Colors.grey, fontSize: 13
+                      color: Colors.grey, fontSize: 13
                         )),
                     ),
                   ],
@@ -141,11 +148,32 @@ class Info extends StatelessWidget {
               ),
             ],
           ),
+          Padding(padding: EdgeInsets.all(mediaQueryHeight*0.02)),
+           Padding(
+             padding:  EdgeInsets.only(bottom:mediaQueryHeight*0.04),
+             child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 DottedLine(
+                           lineLength: mediaQueryWidth*0.4,
+                           direction: Axis.horizontal,
+                           dashColor: Colors.grey,
+                           dashRadius: 50,
+                         ),
+                          DottedLine(
+                       lineLength: mediaQueryWidth*0.4,
+                       direction: Axis.horizontal,
+                       dashColor: Colors.grey,
+                       dashRadius: 50,
+                     ),
+               ],
+             ),
+           ),
            Row(
              mainAxisAlignment: MainAxisAlignment.spaceAround,
              children: [
                SizedBox(
-                 height: mediaQueryHeight*0.3,
+                 height: mediaQueryHeight*0.25,
                 width: mediaQueryWidth*0.4,
                  child: Column(
                    children: [
@@ -163,7 +191,7 @@ class Info extends StatelessWidget {
                       ),),
                       
                       const Padding(
-                        padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                        padding: EdgeInsets.fromLTRB(0, 35, 0, 0),
                         child: Text('4 hour ago', style: TextStyle(
                           color: Colors.grey, fontSize: 13
                         )),
@@ -171,8 +199,14 @@ class Info extends StatelessWidget {
                    ],
                  ),
                ),
+                DottedLine(
+                     lineLength: mediaQueryHeight*0.25,
+                     direction: Axis.vertical,
+                     dashColor: Colors.grey,
+                     dashRadius: 30,
+                   ),
           SizedBox(
-            height: mediaQueryHeight*0.3,
+            height: mediaQueryHeight*0.25,
             width: mediaQueryWidth*0.4,
             child: Column(
               children:  [

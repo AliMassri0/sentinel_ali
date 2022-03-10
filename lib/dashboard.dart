@@ -1,5 +1,5 @@
-import 'dart:html';
 
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 class DashBoard extends StatelessWidget {
   const DashBoard({ Key? key }) : super(key: key);
@@ -28,6 +28,7 @@ class DashBoard extends StatelessWidget {
                    TextStyle(fontWeight: FontWeight.w800, fontSize: 20),),
                    Text('900',style:
                    TextStyle(fontWeight: FontWeight.w800, fontSize: 20),),
+                  
             ]
            ),
               ),
@@ -37,9 +38,10 @@ class DashBoard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
-                height: mediaQueryHeight*0.4,
+                height: mediaQueryHeight*0.3,
                 width: mediaQueryWidth*0.4,
                 child: Column(
+                  
                 children:[ 
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 0, 0, 40),
@@ -50,7 +52,6 @@ class DashBoard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  
                  const Text('0', style: TextStyle(
                     color: Colors.blue, fontSize: 40, fontWeight: FontWeight.w900
                   ),),
@@ -61,13 +62,20 @@ class DashBoard extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
                     child: Text('1 hour ago', style: TextStyle(
                           color: Colors.grey, fontSize: 13
-                        )),
+                    )),
                   ),
                 ]
-                ),
               ),
+            ),
+           
+                DottedLine(
+                     lineLength: mediaQueryHeight*0.3,
+                     direction: Axis.vertical,
+                     dashColor: Colors.grey,
+                     dashRadius: 30,
+                   ),
               SizedBox(
-                height: mediaQueryHeight*0.4,
+                height: mediaQueryHeight*0.3,
                 width: mediaQueryWidth*0.4,
                 child: Column(
                   children: [
@@ -96,70 +104,102 @@ class DashBoard extends StatelessWidget {
                   ],
                 ),
               ),
+              
             ],
           ),
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceAround,
-             children: [
-               SizedBox(
-                 height: mediaQueryHeight*0.3,
-                width: mediaQueryWidth*0.4,
-                 child: Column(
-                   children: [
-                     Padding(
-                       padding: const EdgeInsets.fromLTRB(40, 0, 0, 40),
-                       child: Row(
-                         children:  [
-                            const Text('Body Temperature   '),
-                            Image.asset('assets/images/33.png'),
-                         ],
-                       ),
+          Padding(padding: EdgeInsets.all(mediaQueryHeight*0.03)),
+           Padding(
+             padding:  EdgeInsets.only(bottom:mediaQueryHeight*0.07),
+             child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 DottedLine(
+                           lineLength: mediaQueryWidth*0.45,
+                           direction: Axis.horizontal,
+                           dashColor: Colors.grey,
+                           dashRadius: 50,
+                         ),
+                          DottedLine(
+                       lineLength: mediaQueryWidth*0.45,
+                       direction: Axis.horizontal,
+                       dashColor: Colors.grey,
+                       dashRadius: 50,
                      ),
-                     const Text('6', style: TextStyle(
-                        color: Colors.blue, fontSize: 40, fontWeight: FontWeight.w900
-                      ),),
-                      const Text('Patients', style:  TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.bold
-                      ),),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                        child: Text('4 hour ago', style: TextStyle(
-                          color: Colors.grey, fontSize: 13
-                        )),
-                      ),
-                   ],
+               ],
+             ),
+           ),
+          
+           Padding(
+             padding: EdgeInsets.only(bottom: mediaQueryHeight*0.04),
+             child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceAround,
+               children: [
+                 SizedBox(
+                   height: mediaQueryHeight*0.3,
+                  width: mediaQueryWidth*0.4,
+                   child: Column(
+                     children: [
+                       Padding(
+                         padding: const EdgeInsets.fromLTRB(40, 0, 0, 40),
+                         child: Row(
+                           children:  [
+                              const Text('Body Temperature   '),
+                              Image.asset('assets/images/33.png'),
+                           ],
+                         ),
+                       ),
+                       const Text('6', style: TextStyle(
+                          color: Colors.blue, fontSize: 40, fontWeight: FontWeight.w900
+                        ),),
+                        const Text('Patients', style:  TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold
+                        ),),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                          child: Text('4 hour ago', style: TextStyle(
+                            color: Colors.grey, fontSize: 13
+                          )),
+                        ),
+                     ],
+                   ),
                  ),
-               ),
+                  DottedLine(
+                       lineLength: mediaQueryHeight*0.3,
+                       direction: Axis.vertical,
+                       dashColor: Colors.grey,
+                       dashRadius: 30,
+                     ),
           SizedBox(
-            height: mediaQueryHeight*0.3,
-            width: mediaQueryWidth*0.4,
-            child: Column(
-              children:  [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 0, 0, 40),
-                  child: Row(
-                    children: [
-                      const Text('Heart Rate   '),
-                      Image.asset('assets/images/44.png'),
-                    ],
+              height: mediaQueryHeight*0.3,
+              width: mediaQueryWidth*0.4,
+              child: Column(
+                children:  [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(40, 0, 0, 40),
+                    child: Row(
+                      children: [
+                        const Text('Heart Rate   '),
+                        Image.asset('assets/images/44.png'),
+                      ],
+                    ),
                   ),
-                ),
-                const Text('2', style:  TextStyle(
-                        color: Colors.blue, fontSize: 40, fontWeight: FontWeight.w900
-                      ),),
-                      const Text('Patients', style: TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.bold
-                      ),),
-                      const Padding(
-                        padding:  EdgeInsets.fromLTRB(0, 40, 0, 0),
-                        child:  Text('3 hour ago', style:  TextStyle(
-                          color: Colors.grey, fontSize: 13
-                        )),
-                      ),
-              ],
-            ),
+                  const Text('2', style:  TextStyle(
+                          color: Colors.blue, fontSize: 40, fontWeight: FontWeight.w900
+                        ),),
+                        const Text('Patients', style: TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold
+                        ),),
+                        const Padding(
+                          padding:  EdgeInsets.fromLTRB(0, 40, 0, 0),
+                          child:  Text('3 hour ago', style:  TextStyle(
+                            color: Colors.grey, fontSize: 13
+                          )),
+                        ),
+                ],
+              ),
           ),
-             ],
+               ],
+             ),
            ),
            
         ],
