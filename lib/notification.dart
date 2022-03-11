@@ -26,6 +26,12 @@ class _NotificationsState extends State<Notifications> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: mediaQueryWidth*0.03),
+              child: const Icon(Icons.notifications,
+              color: Colors.white,),
+            ),],
           toolbarHeight: mediaQueryHeight*0.2,
           elevation: 0,
           title: const Text('Notifications'
