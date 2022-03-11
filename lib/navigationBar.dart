@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:sentinel/dashboard.dart';
+import 'package:sentinel/fakepatients.dart';
+import 'package:sentinel/notification.dart';
 import 'package:sentinel/plist.dart';
 import 'package:sentinel/priority.dart';
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
-  //final List<Pharmacy> pharmacy = phr;
   @override
   _NavBarState createState() => _NavBarState();
   
@@ -14,9 +15,7 @@ List <Widget> _pages=[
   const DashBoard(),
   const Priority(),
   const Plist(),
-  Scaffold(
-    backgroundColor: Colors.blue,
-  ),
+  Notifications()
 ];
 class _NavBarState extends State<NavBar> {
   int _selectedPageIndex = 0;

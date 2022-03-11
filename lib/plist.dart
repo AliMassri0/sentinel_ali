@@ -34,8 +34,11 @@ class Plist extends StatelessWidget {
                   color:  Colors.white, 
                   borderRadius: BorderRadius.circular(30)),
                   child: TextField(
+                     onTap: (){
+                       showSearch(context: context,
+                       delegate: CustomSearchDelegate(),);
+                    },
                     decoration: InputDecoration(
-                      //fillColor: Colors.white,
                       suffixIconColor: Colors.lightBlue,
                       prefixIcon: const Icon(Icons.search),
                       suffixIcon: const Icon(Icons.sort),
@@ -90,4 +93,74 @@ class Plist extends StatelessWidget {
       ),
     )]))); 
   }     
+}
+class CustomSearchDelegate extends SearchDelegate {
+  List<String> searchTerms = [
+    'Ali Massri',
+    'Rola Nasser',
+    'Charbel Khazzaka',
+    'Malak SD',
+    'Naynawa Khatib',
+    'Anthony Ghanem',
+    'Mahdi Massri',
+    'Fadi Dabaja',
+    'Hiam Chahine',
+  ];
+
+  static get index => null;
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(onPressed: (){
+        query = '';
+      }, icon: const Icon(Icons.clear))
+    ];
+  }
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return  IconButton (
+      icon: const Icon(Icons.arrow_back),
+      onPressed:(){
+        close(context, null);
+      }
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+   List<String> matchQuery = [];
+   for (var patients in searchTerms) {
+     if(patients.toLowerCase().contains(query.toLowerCase())){
+       matchQuery.add(patients);
+     }
+   };
+   return ListView.builder(
+     itemCount: matchQuery.length,
+     itemBuilder: (context, index){
+       var result = matchQuery[index];
+       return ListTile(
+         title: Text(result),
+       );
+     },
+     );
+  }
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> matchQuery = [];
+   for (var patients in searchTerms) {
+     if(patients.toLowerCase().contains(query.toLowerCase())){
+       matchQuery.add(patients);
+     }
+   };
+    return ListView.builder(
+     itemCount: matchQuery.length,
+     itemBuilder: (context, index){
+       var result = matchQuery[index];
+       return ListTile(
+         title: Text(result),
+       );
+     },
+     );
+  }
+  
 }

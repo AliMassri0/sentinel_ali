@@ -208,3 +208,13 @@ class DashBoard extends StatelessWidget {
     );
    }
   }
+  // return Dismissible(
+  //         background: Container(
+  //           color: Colors.green,
+  //         ),
+  //         key: ValueKey<int>(items[index]),
+  //         onDismissed: (DismissDirection direction) {
+  //           setState(() {
+  //             items.removeAt(index);
+  //           });
+  //         },

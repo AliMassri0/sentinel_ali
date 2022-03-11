@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
-
+import 'package:sentinel/login.dart';
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.grey
       ),
         debugShowCheckedModeBanner: false,
-        home: const Login());
+        home:  const Login());
   }
 }
 
