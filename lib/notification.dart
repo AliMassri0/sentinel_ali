@@ -238,5 +238,9 @@ class _NotificationsState extends State<Notifications> {
         ))); 
   }
 
-  dismissItem(BuildContext context, int index) {}}
+  dismissItem(BuildContext context, int index) {
+    setState(() {
+      items.removeAt(index);
+    });
+  }}
   
